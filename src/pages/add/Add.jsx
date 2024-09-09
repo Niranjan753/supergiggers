@@ -12,6 +12,7 @@ const Add = () => {
             <input
               type="text"
               placeholder="e.g. I will do something I'm really good at"
+              id="titleInput"
             />
             <label htmlFor="">Category</label>
             <select name="cats" id="cats">
@@ -26,7 +27,14 @@ const Add = () => {
             <input type="file" multiple />
             <label htmlFor="">Description</label>
             <textarea name="" id="" placeholder="Brief descriptions to introduce your service to customers" cols="0" rows="16"></textarea>
-            <button>Create</button>
+            <button onClick={() => {
+              const title = document.getElementById('titleInput').value;
+              if (title) {
+                alert('Gig created');
+              } else {
+                alert('Error: Title is required');
+              }
+            }}>Create</button>
           </div>
           <div className="details">
             <label htmlFor="">Service Title</label>

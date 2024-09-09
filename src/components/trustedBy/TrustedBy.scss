@@ -1,20 +1,86 @@
+// .trustedBy {
+//   background-color: #fafafa;
+//   height: 100px;
+//   display: flex;
+//   justify-content: center;
+
+//   .container {
+//     max-width: 760px;
+//     display: flex;
+//     align-items: center;
+//     gap: 20px;
+//     color: rgb(200, 200, 200);
+//     font-weight: 500;
+
+//     img{
+//       height: 50px;
+//       object-fit: contain;
+//     }
+//   }
+// }
+
 .trustedBy {
-  background-color: #fafafa;
+  background-color: #000000; // Dark background color
   height: 100px;
   display: flex;
   justify-content: center;
+  color: #e0aaff;// Apply the pulse animation
 
   .container {
     max-width: 760px;
     display: flex;
     align-items: center;
     gap: 20px;
-    color: rgb(200, 200, 200);
+    color: #b0b0b0; // Light gray color for text
     font-weight: 500;
+    animation: fadeInOut 4s infinite; // Apply the fade in/out animation
 
-    img{
+    img {
       height: 50px;
       object-fit: contain;
+      animation: bounce 2s infinite; // Apply the bounce animation
+    }
+    
+    h2 {
+      color: #e0aaff;
     }
   }
 }
+
+// Keyframe animations
+@keyframes pulseBackground {
+  0% {
+    background-color: #000000; // Original dark background color
+  }
+  50% {
+    background-color: #333333; // Slightly lighter dark color
+  }
+  100% {
+    background-color: #000000; // Return to original dark color
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); // Initial position
+  }
+  40% {
+    transform: translateY(-20px); // Move up
+  }
+  60% {
+    transform: translateY(-10px); // Move back down
+  }
+}
+

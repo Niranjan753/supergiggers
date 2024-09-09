@@ -1,30 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.scss";
 
 function Navbar() {
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
-
   const { pathname } = useLocation();
-
-  const isActive = () => {
-    window.scrollY > 0 ? setActive(true) : setActive(false);
-  };
+  const [currentUser, setCurrentUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    window.addEventListener("scroll", isActive);
-    return () => {
-      window.removeEventListener("scroll", isActive);
-    };
+    const token = localStorage.getItem('token');
+    if (token) {
+      setCurrentUser({ id: 1, username: "Niranjan" });
+    }
   }, []);
 
-  // const currentUser = null
-
-  const currentUser = {
-    id: 1,
-    username: "Anna",
-    isSeller: true,
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setCurrentUser(null);
+    navigate('/');
   };
 
   return (
@@ -32,89 +27,44 @@ function Navbar() {
       <div className="container">
         <div className="logo">
           <Link className="link" to="/">
-            <span className="text">liverr</span>
+            <span className="text">Supergigs</span>
           </Link>
-          <span className="dot">.</span>
+          <span className="dot"></span>
         </div>
         <div className="links">
-          <span>Liverr Business</span>
-          <span>Explore</span>
-          <span>English</span>
-          {!currentUser?.isSeller && <span>Become a Seller</span>}
-          {currentUser ? (
-            <div className="user" onClick={()=>setOpen(!open)}>
-              <img
-                src="https://images.pexels.com/photos/1115697/pexels-photo-1115697.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-              <span>{currentUser?.username}</span>
-              {open && <div className="options">
-                {currentUser.isSeller && (
-                  <>
-                    <Link className="link" to="/mygigs">
-                      Gigs
-                    </Link>
-                    <Link className="link" to="/add">
-                      Add New Gig
-                    </Link>
-                  </>
-                )}
-                <Link className="link" to="/orders">
-                  Orders
-                </Link>
-                <Link className="link" to="/messages">
-                  Messages
-                </Link>
-                <Link className="link" to="/">
+          <div className="user-menu" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+            <span>{currentUser ? currentUser.username : "Menu"}</span>
+            <div className={`options ${open ? 'active' : ''}`}>
+              {/* <Link className="link" to="/upskill">
+                <span>UpSkill</span>
+              </Link> */}
+              <Link className="link" to="/communities">
+                <span>Communities</span>
+              </Link>
+              <Link className="link" to="/findgigs">
+                <span>Find Gigs</span>
+              </Link>
+              <Link className="link" to="/profile">
+                Profile
+              </Link>
+              {/* <Link className="link" to="/orders">
+                Orders
+              </Link> */}
+              <Link className="link" to="/add">
+                Add Gig
+              </Link>
+              <Link className="link" to="/messages">
+                Messages
+              </Link>
+              {currentUser && (
+                <Link className="link" onClick={handleLogout}>
                   Logout
                 </Link>
-              </div>}
+              )}
             </div>
-          ) : (
-            <>
-              <span>Sign in</span>
-              <Link className="link" to="/register">
-                <button>Join</button>
-              </Link>
-            </>
-          )}
+          </div>
         </div>
       </div>
-      {(active || pathname !== "/") && (
-        <>
-          <hr />
-          <div className="menu">
-            <Link className="link menuLink" to="/">
-              Graphics & Design
-            </Link>
-            <Link className="link menuLink" to="/">
-              Video & Animation
-            </Link>
-            <Link className="link menuLink" to="/">
-              Writing & Translation
-            </Link>
-            <Link className="link menuLink" to="/">
-              AI Services
-            </Link>
-            <Link className="link menuLink" to="/">
-              Digital Marketing
-            </Link>
-            <Link className="link menuLink" to="/">
-              Music & Audio
-            </Link>
-            <Link className="link menuLink" to="/">
-              Programming & Tech
-            </Link>
-            <Link className="link menuLink" to="/">
-              Business
-            </Link>
-            <Link className="link menuLink" to="/">
-              Lifestyle
-            </Link>
-          </div>
-          <hr />
-        </>
-      )}
     </div>
   );
 }

@@ -18,7 +18,6 @@ function Footer() {
             <span>Business</span>
             <span>Lifestyle</span>
             <span>Photography</span>
-            <span>Sitemap</span>
           </div>
           <div className="item">
             <h2>About</h2>
@@ -34,8 +33,8 @@ function Footer() {
             <h2>Support</h2>
             <span>Help & Support</span>
             <span>Trust & Safety</span>
-            <span>Selling on Liverr</span>
-            <span>Buying on Liverr</span>
+            <span>Selling on supergigs</span>
+            <span>Buying on supergigs</span>
           </div>
           <div className="item">
             <h2>Community</h2>
@@ -52,15 +51,15 @@ function Footer() {
             <span>Community Standards</span>
           </div>
           <div className="item">
-            <h2>More From Fiverr</h2>
-            <span>Liverr Business</span>
-            <span>Liverr Pro</span>
-            <span>Liverr Logo Maker</span>
-            <span>Liverr Guides</span>
+            <h2>More From Supergigs</h2>
+            <span>supergigs Business</span>
+            <span>supergigs Pro</span>
+            <span>supergigs Logo Maker</span>
+            <span>supergigs Guides</span>
             <span>Get Inspired</span>
-            <span>Liverr Select</span>
+            <span>supergigs Select</span>
             <span>ClearVoice</span>
-            <span>Liverr Workspace</span>
+            <span>supergigs Workspace</span>
             <span>Learn</span>
             <span>Working Not Working</span>
           </div>
@@ -68,8 +67,8 @@ function Footer() {
         <hr />
         <div className="bottom">
           <div className="left">
-            <h2>liverr</h2>
-            <span>© Liverr International Ltd. 2023</span>
+            <h2>supergigs</h2>
+            <span>© supergigs India 2024</span>
           </div>
           <div className="right">
             <div className="social">
@@ -85,7 +84,7 @@ function Footer() {
             </div>
             <div className="link">
               <img src="/img/coin.png" alt="" />
-              <span>USD</span>
+              <span>INR</span>
             </div>
             <img src="/img/accessibility.png" alt="" />
           </div>

@@ -1,0 +1,467 @@
+.upskill {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 32px 0; // Further reduced by 20%
+  transition: filter 0.3s ease;
+
+  .container {
+    max-width: 768px; // Further reduced by 20% from 960px
+    margin: 0 auto;
+    padding: 0 13px; // Further reduced by 20%
+    align-items: center;
+    margin-bottom: 32px; // Further reduced by 20%
+
+    .subtitle {
+      font-size: 0.77rem; // Further reduced by 20%
+      color: #a0a0a0;
+      margin-bottom: 13px; // Further reduced by 20%
+    }
+
+    h1, h2 {
+      font-size: 1.6rem; // Further reduced by 20%
+      color: #e0aaff;
+      margin-bottom: 13px; // Further reduced by 20%
+    }
+
+    p {
+      font-size: 0.64rem; // Further reduced by 20%
+      color: #ffffff;
+      margin-bottom: 13px; // Further reduced by 20%
+    }
+
+    .assessment-btn {
+      background-color: #e0aaff;
+      color: #0f1624;
+      border: none;
+      padding: 6px 13px; // Further reduced by 20%
+      font-size: 0.64rem; // Further reduced by 20%
+      border-radius: 3px; // Further reduced by 20%
+      cursor: pointer;
+      margin-bottom: 26px; // Further reduced by 20%
+      transition: background-color 0.3s ease;
+      width: 26%; // Further reduced by 20%
+
+      &:hover {
+        background-color: #c17aff;
+      }
+
+      &.small {
+        font-size: 9px; // Further reduced by 20%
+        padding: 5px 10px; // Further reduced by 20%
+      }
+    }
+
+    .skill-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); // Further reduced by 20%
+      gap: 19px; // Further reduced by 20%
+
+      .category-card {
+        background: linear-gradient(145deg, #1a1f2e, #14192a);
+        border-radius: 6px; // Further reduced by 20%
+        padding: 19px; // Further reduced by 20%
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-3px); // Further reduced by 20%
+        }
+
+        .icon {
+          font-size: 1.6rem; // Further reduced by 20%
+          color: #e0aaff;
+          margin-bottom: 13px; // Further reduced by 20%
+          opacity: 1.0;
+          filter: grayscale(2);
+          mix-blend-mode: exclusion;
+        }
+
+        h3 {
+          font-size: 0.9rem; // Further reduced by 20%
+          color: #ffffff;
+          margin-bottom: 10px; // Further reduced by 20%
+          background: none;
+        }
+
+        p {
+          font-size: 0.64rem; // Further reduced by 20%
+          color: #a0a0a0;
+          line-height: 1.02; // Further reduced by 20%
+          margin-bottom: 13px; // Further reduced by 20%
+          background: none;
+        }
+
+          button {
+          background-color: transparent;
+          color: #e0aaff;
+          border: 1px solid #e0aaff;
+          padding: 4.8px 10.4px; // Further reduced by 20%
+          font-size: 0.576rem; // Further reduced by 20%
+          border-radius: 3.2px; // Further reduced by 20%
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #e0aaff;
+            color: #0f1624;
+          }
+        }
+      }
+    }
+  }
+
+  .course-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%; // Reduced by 20%
+    height: 80%; // Reduced by 20%
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .modal-content {
+      position: relative !important;
+      background-color: #000000;
+      border-radius: 9.6px; // Further reduced by 20%
+      padding: 19.2px; // Further reduced by 20%
+      width: 57.6%; // Further reduced by 20%
+      max-width: 512px; // Further reduced by 20%
+      height: 51.2vh; // Further reduced by 20%
+      overflow-y: auto;
+      position: relative;
+      background: none !important;
+
+      .close-btn {
+        position: absolute !important;
+        top: 6.4px !important; // Further reduced by 20%
+        right: 6.4px !important; // Further reduced by 20%
+        background: none !important;
+        border: none !important;
+        font-size: 15.2px !important; // Further reduced by 20%
+        color: #e0aaff !important;
+        cursor: pointer !important;
+        transition: color 0.3s ease !important;
+        z-index: 1001 !important;
+
+        &:hover {
+          color: #c77dff !important;
+        }
+      }
+
+      h2 {
+        margin-top: 25.6px !important; // Further reduced by 20%
+        color: #e0aaff;
+        margin-bottom: 25.6px; // Further reduced by 20%
+        font-size: 1.408rem; // Further reduced by 20%
+        text-align: center;
+        background: none !important;
+      }
+
+      .course-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(192px, 1fr)); // Further reduced by 20%
+        gap: 25.6px; // Further reduced by 20%
+        padding: 12.8px; // Further reduced by 20%
+
+        .course-item {
+          background: linear-gradient(145deg, #1e2435, #16192a);
+          border-radius: 8px; // Further reduced by 20%
+          padding: 9.6px; // Further reduced by 20%
+          display: flex;
+          flex-direction: column;
+          height: 57.6%; // Further reduced by 20%
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 2.4px 6.4px rgba(0, 0, 0, 0.1); // Further reduced by 20%
+          background: none !important;
+
+          &:hover {
+            transform: translateY(-3.2px); // Further reduced by 20%
+            box-shadow: 0 6.4px 12.8px rgba(0, 0, 0, 0.2); // Further reduced by 20%
+          }
+
+          h3 {
+            color: #ffffff;
+            margin-bottom: 12.8px; // Further reduced by 20%
+            font-size: 1.024rem; // Further reduced by 20%
+            background: none !important;
+          }
+
+          p {
+            color: #a0a0a0;
+            margin-bottom: 16px; // Further reduced by 20%
+            font-size: 0.704rem; // Further reduced by 20%
+            line-height: 1.024; // Further reduced by 20%
+            background: none;
+            flex-grow: 1;
+          }
+
+          .course-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px; // Reduced by 20%
+            padding: 12px 0; // Reduced by 20%
+            border-top: 1px solid rgba(224, 170, 255, 0.2);
+            border-bottom: 1px solid rgba(224, 170, 255, 0.2);
+            background-color: none !important;
+
+            .price {
+              color: #e0aaff;
+              font-weight: bold;
+              font-size: 0.96rem; // Reduced by 20%
+              background: none !important;
+            }
+
+            .rating {
+              display: flex;
+              align-items: center;
+              gap: 6px; // Reduced by 20%
+              color: #ffd700;
+              font-size: 0.96rem; // Reduced by 20%
+              background: none !important;
+            }
+          }
+
+          .reviews {
+            margin-bottom: 16px; // Further reduced by 20%
+            background: none !important;
+
+            h4 {
+              color: #e0aaff;
+              margin-bottom: 9.6px; // Further reduced by 20%
+              font-size: 0.832rem; // Further reduced by 20%
+              background: none !important;
+            }
+
+            .review-list {
+              max-height: 115.2px; // Further reduced by 20%
+              overflow-y: auto;
+              padding-right: 9.6px; // Further reduced by 20%
+              background: none !important;
+
+              &::-webkit-scrollbar {
+                width: 4.8px; // Further reduced by 20%
+              }
+
+              &::-webkit-scrollbar-track {
+                background: #1a1f2e;
+                border-radius: 6.4px; // Further reduced by 20%
+              }
+
+              &::-webkit-scrollbar-thumb {
+                background-color: #e0aaff;
+                border-radius: 6.4px; // Further reduced by 20%
+                border: 1.6px solid #000000; // Further reduced by 20%
+              }
+
+              .review {
+                margin-bottom: 12.8px; // Further reduced by 20%
+                padding-bottom: 9.6px; // Further reduced by 20%
+                border-bottom: 1px solid rgba(224, 170, 255, 0.1);
+                background: none !important;
+                &:last-child {
+                  border-bottom: none;
+                }
+
+                p {
+                  color: #ffffff;
+                  font-style: italic;
+                  margin-bottom: 4.8px; // Further reduced by 20%
+                  font-size: 0.64rem; // Further reduced by 20%
+                  line-height: 0.96; // Further reduced by 20%
+                  background: none !important;
+                }
+
+                span {
+                  color: #a0a0a0;
+                  font-size: 0.576rem; // Further reduced by 20%
+                  background: none !important;
+                }
+              }
+            }
+          }
+
+          .course-link {
+            display: inline-block;
+            background-color: #e0aaff;
+            color: #0f1624;
+            padding: 8px 15.2px; // Further reduced by 20%
+            border-radius: 4.8px; // Further reduced by 20%
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.704rem; // Further reduced by 20%
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+
+            &:hover {
+              background-color: #c17aff;
+              transform: translateY(-1.6px); // Further reduced by 20%
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .domain-selection {
+    margin-top: 19.2px; // Further reduced by 20%
+    margin-bottom: 19.2px; // Further reduced by 20%
+    animation: fadeIn 0.5s ease-out;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 16px; // Further reduced by 20%
+    }
+
+    .domain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(120px, 1fr)); // Further reduced by 20%
+      gap: 16px; // Further reduced by 20%
+    }
+
+    .domain-card {
+      background-color: #000000;
+      border-radius: 6.4px; // Further reduced by 20%
+      padding: 16px; // Further reduced by 20%
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      animation: glow 2s infinite;
+
+      &:hover {
+        transform: translateY(-4px); // Further reduced by 20%
+        box-shadow: 0 4px 12px rgba(224, 170, 255, 0.3); // Further reduced by 20%
+      }
+
+      .icon {
+        font-size: 1.6rem; // Further reduced by 20%
+        margin-bottom: 8px; // Further reduced by 20%
+        color: #e0aaff;
+      }
+
+      h3 {
+        font-size: 0.8rem; // Further reduced by 20%
+        margin: 0;
+      }
+    }
+  }
+
+  .schedule-test-form {
+    background-color: #000000;
+    border-radius: 6.4px; // Further reduced by 20%
+    padding: 16px; // Further reduced by 20%
+    margin-top: 16px; // Further reduced by 20%
+    animation: fadeIn 0.5s ease-out;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 16px; // Further reduced by 20%
+      color: #e0aaff;
+    }
+
+    form {
+      display: grid;
+      gap: 12px; // Further reduced by 20%
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 4px; // Further reduced by 20%
+      color: #fff;
+    }
+
+    input, select {
+      padding: 6.4px; // Further reduced by 20%
+      border-radius: 3.2px; // Further reduced by 20%
+      border: 1px solid #444;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px; // Further reduced by 20%
+    }
+
+    button {
+      padding: 8px 16px; // Further reduced by 20%
+      border: none;
+      border-radius: 3.2px; // Further reduced by 20%
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &[type="submit"] {
+        background-color: #e0aaff;
+        color: #000;
+
+        &:hover {
+          background-color: #d580ff;
+        }
+      }
+
+      &[type="button"] {
+        background-color: #444;
+        color: #fff;
+
+        &:hover {
+          background-color: #555;
+        }
+      }
+    }
+  }
+}
+
+
+
+.domain-card {
+  animation: glow 2s infinite;
+  box-shadow: 0 0 10px rgba(224, 170, 255, 0.5);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(224, 170, 255, 0.8);
+  }
+
+@media (max-width: 768px) {
+  .upskill {
+    .container {
+      padding: 0 10px;
+
+      .assessment-btn {
+        width: 100%;
+      }
+
+      .skill-categories {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .course-modal {
+      .modal-content {
+        width: 95%;
+        height: 90vh;
+
+        .course-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+
+    .domain-selection {
+      .domain-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+}

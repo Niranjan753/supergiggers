@@ -2,97 +2,116 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #013914;
-  color: white;
+  background-color: #000; // Black background color
+  color: #e0aaff; // Light purple text color
   position: sticky;
   top: 0;
   z-index: 999;
-  transition: 0.5s all ease;
+  transition: background-color 0.5s ease, color 0.5s ease; // Smooth transition for background and color
 
   &.active {
-    background-color: white;
-    color: black;
+    background-color: #000; // Maintain black background in active state
+    color: #e0aaff; // Light purple text color
 
     button {
-      background-color: white !important;
-      color: #1dbf73 !important;
-      border: 1px solid #1dbf73 !important;
+      background-color: #000 !important; // Black button background
+      color: #e0aaff !important; // Light purple text color for button
+      border: 1px solid #e0aaff !important; // Light purple border for button
+      transition: background-color 0.3s ease, color 0.3s ease; // Smooth transition for button
     }
   }
 
   .container {
-    width: 1400px;
+    width: 1120px; // Reduced by 20% from 1400px
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0px;
+    padding: 20px 0;
+    padding-right: 32px; // Reduced by 20% from 40px
 
     .logo {
-      font-size: 34px;
+      font-size: 27px; // Reduced by 20% from 34px
       font-weight: bold;
+      text-align: center;
+      flex: 1; // Make the logo take up available space and center it
+      font-family: 'Supergigs', sans-serif; // Change font to Supergigs
 
       .text {
+        // Additional styling if needed
       }
 
       .dot {
         font-weight: bold;
-        color: #1dbf73;
+        color: #e0aaff; // Light purple color for dot
       }
     }
+
     .links {
       display: flex;
       align-items: center;
-      gap: 24px;
-      font-family: "Montserrat", sans-serif;
+      gap: 2px;
+      font-family: 'Supergigs', sans-serif; // Change font to Supergigs
       font-weight: 500;
 
       span {
         white-space: nowrap;
+        transition: color 0.3s ease; // Smooth transition for color on hover
       }
 
-      .user {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        cursor: pointer;
+      .user-menu {
         position: relative;
-
-        img {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          object-fit: cover;
-        }
+        cursor: pointer;
 
         .options {
           position: absolute;
-          top: 50px;
-          right: 0;
-          padding: 20px;
-          background-color: white;
-          border-radius: 10px;
-          z-index: 999;
-          border: 1px solid lightgrey;
+          top: 100%;
+          left: 0;
+          background-color: #000; // Black background for options
+          border-radius: 4px; // Reduced by 20% from 5px
+          padding: 8px 12px; // Reduced by 20% from 10px 15px
           display: flex;
           flex-direction: column;
-          gap: 10px;
-          width: 200px;
+          gap: 8px; // Reduced by 20% from 10px
+          width: 64px; // Reduced by 20% from 80px
+          transition: all 0.3s ease-in-out;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(8px); // Reduced by 20% from 10px
+          border: 1px solid #333; // Darker border color
+          color: #e0aaff; // Light purple color for text in options
+          z-index: 999;
           font-weight: 300;
-          color: gray;
+
+          &.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
+
+          .link {
+            color: #e0aaff; // Light purple color for link
+            text-decoration: none;
+
+            &:hover {
+              color: #c77dff; // Darker purple color on hover
+            }
+          }
         }
       }
 
       button {
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: 1px solid white;
+        color: #e0aaff; // Light purple text color for button
+        padding: 8px 16px; // Reduced by 20% from 10px 20px
+        border-radius: 4px; // Reduced by 20% from 5px
+        border: 1px solid #e0aaff; // Light purple border for button
         background-color: transparent;
         cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease; // Smooth transition for button
 
         &:hover {
-          background-color: #1dbf73;
-          border-color: #1dbf73;
+          background-color: #e0aaff; // Light purple background on hover
+          color: #000; // Black text color on hover
+          border-color: #e0aaff; // Light purple border on hover
         }
       }
     }
@@ -101,17 +120,56 @@
   hr {
     width: calc(100% - 2px);
     height: 0;
-    border-top: 0.5px solid #ebe9e9;
-    border-bottom: 0.5px solid #ebe9e9;
+    border-top: 0.5px solid #444; // Darker gray border for the top
+    border-bottom: 0.5px solid #444; // Darker gray border for the bottom
+    transition: border-color 0.3s ease; // Smooth transition for border color
   }
 
   .menu {
-    width: 1400px;
-    padding: 10px 0px;
+    width: 1120px; // Reduced by 20% from 1400px
+    padding: 8px 0; // Reduced by 20% from 10px 0
     display: flex;
     justify-content: space-between;
-    color: gray;
+    color: #e0aaff; // Light purple color for menu text
     font-weight: 300;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Supergigs', sans-serif; // Change font to Supergigs
+    transition: color 0.3s ease; // Smooth transition for color
+  }
+
+  .create-gig-btn {
+    padding: 0.4rem 0.8rem; // Reduced by 20% from 0.5rem 1rem
+    background-color: #e0aaff;
+    color: #000000;
+    border: none;
+    border-radius: 3px; // Reduced by 20% from 4px
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #c77dff;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    .container {
+      flex-direction: column;
+      padding: 8px; // Reduced by 20% from 10px
+
+      .logo {
+        margin-bottom: 8px; // Reduced by 20% from 10px
+      }
+
+      .links {
+        flex-direction: column;
+        gap: 8px; // Reduced by 20% from 10px
+      }
+    }
+
+    .menu {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px; // Reduced by 20% from 10px
+    }
   }
 }

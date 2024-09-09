@@ -4,7 +4,7 @@
   justify-content: center;
 
   .container {
-    width: 1400px;
+    width: 1200px;
     padding: 30px 0px;
     display: flex;
     flex-direction: column;
@@ -14,98 +14,183 @@
       font-weight: 300;
       text-transform: uppercase;
       font-size: 13px;
-      color: #555;
+      color: #a3a3d1; // Purple-tinted gray
     }
 
     h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      font-weight: 400;
+
     }
 
     p {
-      color: #999;
+      font-size: 1rem;
+      margin-bottom: 20px;
       font-weight: 300;
     }
 
     .menu {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       margin-bottom: 20px;
+      gap: 10px;
+
 
       .left {
         display: flex;
         align-items: center;
         gap: 10px;
-        color: #555;
         font-weight: 300;
+        
+        span {
+          margin-right: 10px;
+          font-size: 1rem;
+        }
 
-        input{
+        input {
+          width: 100px;
           padding: 5px;
-          border: 1px solid lightgrey;
-          border-radius: 5px;
-          outline: none;
+          margin-right: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
 
-          &::placeholder{
-            color: #999;
+        button {
+          padding: 5px 10px;
+          border: none;
+          border-radius: 4px;
+          background-color: #333;
+          color: #fff;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #555;
           }
         }
-
-        button{
-          padding: 5px 10px;
-          background-color: #1dbf73;
-          color: white;
-          border: none;
-          font-weight: 500;
-          border-radius: 5px;
-          cursor: pointer;
-        }
-
       }
 
       .right {
-        position: relative;
         display: flex;
         align-items: center;
-        gap: 10px;
 
         .sortBy {
-          color: #555;
-          font-weight: 300;
+          margin-right: 10px;
+          font-size: 1rem;
         }
 
         .sortType {
-          font-weight: 500;
+          margin-right: 10px;
+          font-size: 1rem;
+          font-weight: bold;
         }
 
         img {
-          width: 15px;
+          width: 20px;
+          height: 20px;
           cursor: pointer;
         }
 
         .rightMenu {
-          padding: 20px;
-          background-color: white;
-          border: 0.5px solid lightgrey;
-          border-radius: 5px;
           position: absolute;
-          top: 30px;
+          top: 40px;
           right: 0;
-          z-index: 9;
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-          color: #555;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          z-index: 10;
 
           span {
+            display: block;
+            padding: 10px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: #f0f0f0;
+            }
           }
         }
       }
     }
 
-    .cards {
+    .create-gig-button {
+      display: block;
+      margin: 0 auto 20px;
+      padding: 10px 20px;
+      border: 2px solid #333;
+      border-radius: 4px;
+      background-color: transparent;
+      color: #333;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+
+      &:hover {
+        border-color: #555;
+      }
+    }
+
+    .create-gig-form {
       display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+
+      input, textarea {
+        width: 100%;
+        max-width: 500px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #fff;
+        color: #333;
+
+        &::placeholder {
+          color: #888;
+        }
+      }
+
+      button {
+        padding: 10px 20px;
+        border: 2px solid #333;
+        border-radius: 4px;
+        background-color: transparent;
+        color: #333;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+
+        &:hover {
+          border-color: #555;
+        }
+      }
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .gig {
+    .container {
+      flex-direction: column;
+      padding: 10px;
+
+      .left, .right {
+        width: 100%;
+      }
+
+      .right {
+        position: static;
+        margin-top: 20px;
+      }
     }
   }
 }

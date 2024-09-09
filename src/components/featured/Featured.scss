@@ -1,95 +1,295 @@
 .featured {
-  height: 600px;
+  min-height: 480px; // Changed from fixed height to min-height
   display: flex;
   justify-content: center;
-  background-color: #013914;
-  color: white;
+  align-items: center;
+  background-color: #000;
+  color: #e0aaff;
+  position: relative;
+  padding: 20px; // Added padding for mobile
 
   .container {
-    width: 1400px;
+    width: 100%;
+    max-width: 960px;
     display: flex;
+    flex-direction: column; // Changed to column for mobile
     align-items: center;
+    justify-content: center;
+    position: relative; // Changed from absolute
+    margin-left: 0; // Removed margin for mobile
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      margin-left: 240px;
+    }
 
     .left {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 24px;
+      text-align: center;
+      flex: 1;
+      width: 100%; // Full width on mobile
 
       h1 {
-        font-size: 50px;
+        font-size: 40px; // Smaller font size for mobile
+        color: transparent;
+        background-image: linear-gradient(to right, #e0aaff, #ffffff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: fadeIn 2s ease-in-out;
+        margin-right: 0; // Removed margin for mobile
+
+        @media (min-width: 768px) {
+          font-size: 64px;
+          margin-right: 24px;
+        }
 
         span {
+          font-weight: 1000;
+          font-size: 50px; // Smaller font size for mobile
+          text-decoration: underline;
           font-style: italic;
-          font-weight: 300;
+          color: #ffffff;
+          text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+
+          @media (min-width: 768px) {
+            font-size: 80px;
+          }
+        }        
+      }
+
+      p {
+        font-size: 14px; // Smaller font size for mobile
+
+        @media (min-width: 768px) {
+          font-size: 16px;
+        }
+
+        span {
+          color: #ffffff;
+          text-shadow: 0 0 4px rgba(255, 255, 255, 0.5),
+                       0 0 8px rgba(255, 255, 255, 0.5),
+                       0 0 12px rgba(255, 255, 255, 0.5),
+                       0 0 16px rgba(255, 255, 255, 0.5),
+                       0 0 28px rgba(255, 255, 255, 0.5),
+                       0 0 32px #e0aaff,
+                       0 0 40px #e0aaff,
+                       0 0 60px #e0aaff;
         }
       }
 
       .search {
-        background-color: white;
-        border-radius: 5px;
+        background-color: #1c1c1c;
+        border-radius: 4px;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column; // Changed to column for mobile
+        align-items: stretch; // Stretch items to full width
         overflow: hidden;
+        animation: slideIn 1s ease-in-out;
+
+        @media (min-width: 768px) {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
 
         .searchInput {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
+          margin: 8px; // Added margin for spacing
+
           img {
-            width: 20px;
-            height: 20px;
-            margin: 10px;
+            width: 16px;
+            height: 16px;
+            filter: invert(1);
           }
 
           input {
+            flex-grow: 1; // Allow input to grow
             border: none;
             outline: none;
+            background-color: #333;
+            color: #e0aaff;
+            padding: 8px;
+            border-radius: 4px;
 
             &::placeholder {
-              color: gray;
+              color: #bbb;
             }
           }
         }
 
         button {
-          width: 120px;
-          height: 50px;
+          width: 100%; // Full width on mobile
+          height: 40px;
           border: none;
-          background-color: #1dbf73;
-          color: white;
-          align-self: flex-end;
+          background-color: #6c43a0;
+          color: #e0aaff;
           cursor: pointer;
+          transition: background-color 0.3s;
+          animation: bounceIn 1s ease-in-out;
+          border-radius: 4px;
+
+          @media (min-width: 768px) {
+            width: 96px;
+          }
+
+          &:hover {
+            background-color: #4b2c6f;
+          }
         }
       }
 
       .popular {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        flex-wrap: wrap; // Allow wrapping on smaller screens
+        justify-content: center; // Center items
+        gap: 8px;
 
         span {
-          width: max-content;
+          color: #e0aaff;
         }
 
         button {
           width: max-content;
-          color: white;
-          border: 1px solid white;
-          padding: 5px 10px;
-          border-radius: 20px;
+          color: #e0aaff;
+          border: 1px solid #e0aaff;
+          padding: 4px 8px;
+          border-radius: 16px;
           background-color: transparent;
-          font-size: 14px;
+          font-size: 11px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          animation: pulse 2s infinite;
+
+          &:hover {
+            background-color: #6c43a0;
+          }
+        }
+      }
+
+      .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        max-width: 100%; // Full width on mobile
+        margin: 0 auto;
+        width: 100%;
+
+        @media (min-width: 768px) {
+          max-width: 240px;
+        }
+
+        input {
+          padding: 8px;
+          border: 1px solid #e0aaff;
+          border-radius: 4px;
+          background-color: rgba(255, 255, 255, 0.1);
+          color: #ffffff;
+
+          &::placeholder {
+            color: #e0aaff;
+          }
+        }
+
+        button {
+          padding: 8px;
+          background-color: #e0aaff;
+          color: #000000;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: #c77dff;
+          }
         }
       }
     }
 
     .right {
-      height: 100%;
-      img {
+      display: none; // Hide on mobile
+
+      @media (min-width: 768px) {
+        display: flex;
         height: 100%;
-        object-fit: contain;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+
+        img {
+          height: 64%;
+          object-fit: cover;
+          filter: brightness(80%);
+          animation: zoomIn 2s ease-in-out;
+        }
       }
     }
+  }
+}
+
+// Keyframe animations remain unchanged
+
+.google-login-btn {
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #357ae8;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+  width: 100%; // Full width on mobile
+  max-width: 320px; // Max width for larger screens
+  text-align: center;
+
+  input {
+    padding: 8px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    color: #ffffff;
+  }
+
+  button {
+    padding: 8px;
+    background-color: #e0aaff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #e0aaff;
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-size: 11px;
+}
+
+p {
+  margin-top: 8px;
+  font-size: 11px;
+
+  span {
+    color: #e0aaff;
+    cursor: pointer;
+    font-weight: bold;
   }
 }

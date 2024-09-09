@@ -1,69 +1,136 @@
 .footer {
   display: flex;
   justify-content: center;
-  color: #666;
-  margin: 50px 0px;
+  color: #ffffff;
+  background-color: #000000;
+  padding: 24px 16px; // Added horizontal padding
 
   img {
-    width: 24px;
-    height: 24px;
+    width: 19px;
+    height: 19px;
+    filter: invert(1);
+    filter: grayscale(1);
   }
 
   .container {
-    width: 1400px;
+    width: 100%;
+    max-width: 1120px;
+
     .top {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
+      gap: 24px; // Added gap for spacing between wrapped items
+
       .item {
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        h2 {
-          font-size: 16px;
-          color: #555;
+        gap: 16px;
+        flex: 1 1 200px; // Allow items to grow and shrink, with a minimum width
+
+        .category-card {
+          background-color: #000000;
+          border-radius: 6px;
+          padding: 12px;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+          transition: all 0.3s ease;
         }
+
+        h2 {
+          font-size: 13px;
+          color: #e0aaff;
+        }
+
         span {
           font-weight: 300;
+          color: #aaa;
+          display: block;
+          margin: 4px 0;
+        }
+
+        .category-card:hover {
+          box-shadow: 0 5px 10px rgba(255, 105, 180, 0.7);
+          background-color: #000000;
         }
       }
     }
 
     hr {
-      margin: 50px 0px;
+      margin: 40px 0;
       height: 0;
-      border: 1px solid #ebe9e9;
+      border: 1px solid #000000;
     }
+
     .bottom {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      gap: 16px; // Added gap for spacing between wrapped items
 
       .left {
-        width: max-content;
+        width: 100%;
+        max-width: max-content;
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 16px;
 
         span {
-          font-size: 13px;
+          font-size: 10px;
           white-space: nowrap;
+          color: #ffffff;
         }
       }
+
       .right {
-        width: max-content;
+        width: 100%;
+        max-width: max-content;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        gap: 30px;
+        gap: 24px;
 
         .social {
           display: flex;
-          gap: 20px;
+          gap: 16px;
         }
 
         .link {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
+          color: #e0aaff;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #6c43a0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    .container {
+      .top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .item {
+          width: 100%;
+        }
+      }
+
+      .bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .left, .right {
+          justify-content: center;
         }
       }
     }
